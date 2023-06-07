@@ -50,7 +50,6 @@ function playRound() {
                 return 0
             }
         }
-
     } else {
         playerSelection = prompt("Invalid entry, please try again.")
     }
@@ -90,7 +89,5 @@ function game() {
         }
     }
 }
-
-
 
 game();
