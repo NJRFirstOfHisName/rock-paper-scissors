@@ -15,36 +15,27 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissors") {
         if (playerSelection === "rock") {
             if (computerSelection === "rock") {
-                console.log("Computer has selected rock. Tie game!")
-                return
+                return("Computer has selected rock. Tie game!")
             } else if (computerSelection === "paper") {
-                console.log("Computer has selected paper. You lose!")
-                return
+                return("Computer has selected paper. You lose!")                
             } else {
-                console.log("Computer has selected scissors. You win!")
-                return
+                return("Computer has selected scissors. You win!")                
             }
         } else if (playerSelection === "paper") {
             if (computerSelection === "rock") {
-                console.log("Computer has selected rock. You win!")
-                return
+                return("Computer has selected rock. You win!")                
             } else if (computerSelection === "paper") {
-                console.log("Computer has selected paper. Tie game!")
-                return
+                return("Computer has selected paper. Tie game!")               
             } else {
-                console.log("Computer has selected scissors. You lose!")
-                return
+                return("Computer has selected scissors. You lose!")               
             }
         } else {
             if (computerSelection === "rock") {
-                console.log("Computer has selected rock. You lose!")
-                return
+                return("Computer has selected rock. You lose!")
             } else if (computerSelection === "paper") {
-                console.log("Computer has selected paper. You win!")
-                return
+                return("Computer has selected paper. You win!")                
             } else {
-                console.log("Computer has selected scissors. Tie game!")
-                return
+                return("Computer has selected scissors. Tie game!")
             }
         }
 
@@ -56,4 +47,4 @@ function playRound(playerSelection, computerSelection) {
 let playerSelection = prompt("Enter your choice: rock, paper, or scissors?").toLowerCase();
 const computerSelection = getComputerChoice();
 
-playRound(playerSelection, computerSelection);
+console.log(playRound(playerSelection, computerSelection));
