@@ -61,17 +61,15 @@ function game() {
                 wins++
             }
             div.textContent += "\r\nWins: " + wins + "\r\nLosses: " + losses
-                if (wins === 5 || losses === 5) {
-                    if (wins > losses) {
-                        div.textContent += "\n You win the match!"
-                        game()
-                    } else {
-                        div.textContent += "\n You lose the match."
-                        game()
-                    }
-                    wins = 0
-                    losses = 0
-                    i = 0
+            if (wins === 5 || losses === 5) {
+                if (wins > losses) {
+                    div.textContent += "\n You win the match!"
+                } else {
+                    div.textContent += "\n You lose the match."
+                }
+                wins = 0
+                losses = 0
+                i = 0
             }
         })
     })
