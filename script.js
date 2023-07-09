@@ -1,52 +1,58 @@
 /* eslint-disable no-plusplus */
-const div = document.createElement('div');
-div.setAttribute('style', 'white-space: pre;');
-document.getElementById('container').appendChild(div);
-const buttons = document.querySelectorAll('button');
+const div = document.createElement("div");
+div.setAttribute("style", "white-space: pre;");
+document.getElementById("container").appendChild(div);
+const buttons = document.querySelectorAll("button");
 
 function getComputerChoice() {
   const rps = Math.random() * 3;
   if (rps < 1) {
-    return 'rock';
-  } if (rps < 2) {
-    return 'paper';
-  } if (rps < 3) {
-    return 'scissors';
+    return "rock";
   }
-  return 'error';
+  if (rps < 2) {
+    return "paper";
+  }
+  if (rps < 3) {
+    return "scissors";
+  }
+  return "error";
 }
 
 function playRound(playerSelection) {
   const computerSelection = getComputerChoice();
-  if (playerSelection === 'rock') {
-    if (computerSelection === 'rock') {
-      div.textContent = 'Computer has selected rock. Tie game!';
+  if (playerSelection === "rock") {
+    if (computerSelection === "rock") {
+      div.textContent = "Computer has selected rock. Tie game!";
       return 0;
-    } if (computerSelection === 'paper') {
-      div.textContent = 'Computer has selected paper. You lose!';
+    }
+    if (computerSelection === "paper") {
+      div.textContent = "Computer has selected paper. You lose!";
       return 1;
     }
-    div.textContent = 'Computer has selected scissors. You win!';
+    div.textContent = "Computer has selected scissors. You win!";
     return 2;
-  } if (playerSelection === 'paper') {
-    if (computerSelection === 'rock') {
-      div.textContent = 'Computer has selected rock. You win!';
+  }
+  if (playerSelection === "paper") {
+    if (computerSelection === "rock") {
+      div.textContent = "Computer has selected rock. You win!";
       return 2;
-    } if (computerSelection === 'paper') {
-      div.textContent = 'Computer has selected paper. Tie game!';
+    }
+    if (computerSelection === "paper") {
+      div.textContent = "Computer has selected paper. Tie game!";
       return 0;
     }
-    div.textContent = 'Computer has selected scissors. You lose!';
+    div.textContent = "Computer has selected scissors. You lose!";
     return 1;
   }
-  if (computerSelection === 'rock') {
-    div.textContent = 'Computer has selected rock. You lose!';
+  if (computerSelection === "rock") {
+    div.textContent = "Computer has selected rock. You lose!";
     return 1;
-  } if (computerSelection === 'paper') {
-    div.textContent = 'Computer has selected paper. You win!';
+  }
+  if (computerSelection === "paper") {
+    div.textContent = "Computer has selected paper. You win!";
     return 2;
   }
-  div.textContent = 'Computer has selected scissors. Tie game!';
+  div.textContent = "Computer has selected scissors. Tie game!";
   return 0;
 }
 
@@ -55,7 +61,7 @@ function game() {
   let losses = 0;
   let i = 0;
   buttons.forEach((button) => {
-    button.addEventListener('click', () => {
+    button.addEventListener("click", () => {
       const result = playRound(button.id);
       i++;
       if (result === 1) {
@@ -66,9 +72,9 @@ function game() {
       div.textContent += `\r\nWins: ${wins}\r\nLosses: ${losses}`;
       if (wins === 5 || losses === 5) {
         if (wins > losses) {
-          div.textContent += '\n You win the match!';
+          div.textContent += "\n You win the match!";
         } else {
-          div.textContent += '\n You lose the match.';
+          div.textContent += "\n You lose the match.";
         }
         wins = 0;
         losses = 0;
